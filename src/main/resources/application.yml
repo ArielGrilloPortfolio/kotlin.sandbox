@@ -1,0 +1,36 @@
+
+spring:
+  main:
+    banner-mode: "OFF"
+    cloud-platform: kubernetes
+  security:
+    user:
+      name: "54aa4b7a2"
+      password: "366ec2976"
+  flyway:
+    mixed: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/kotlin.sandbox.tasks
+    username: postgres
+    password: postgres
+
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+      connection-timeout: 10000
+      connection-test-query: SELECT 1
+      idle-timeout: 10000
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
