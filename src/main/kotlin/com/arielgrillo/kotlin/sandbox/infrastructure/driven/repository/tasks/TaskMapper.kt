@@ -11,4 +11,14 @@ object TaskMapper {
       isDone = source.isDone
     )
   }
+
+  fun mapper(source: TaskModel): JpaTasksEntity {
+    return JpaTasksEntity(
+      id = source.id,
+      title = source.title,
+      description = source.description,
+      isDone = source.isDone
+    )
+  }
+
 }

@@ -11,15 +11,18 @@ class TaskRepository(
     return tasks.map { TaskMapper.mapper(it) }
   }
 
-  override fun get(id: Int) {
-    TODO("Not yet implemented")
+  override fun get(id: Int): TaskModel {
+    return TaskMapper.mapper(jpaRepository.findById(id).get())
   }
 
   override fun create(task: TaskModel) {
-    TODO("Not yet implemented")
+    val jpaEntity = TaskMapper.mapper(task)
+    jpaRepository.save(jpaEntity)
   }
 
   override fun markAsDone(id: Int) {
-    TODO("Not yet implemented")
+    var jpaEntity = jpaRepository.findById(id).get()
+    jpaEntity.isDone = true
+    jpaRepository.save(jpaEntity)
   }
 }

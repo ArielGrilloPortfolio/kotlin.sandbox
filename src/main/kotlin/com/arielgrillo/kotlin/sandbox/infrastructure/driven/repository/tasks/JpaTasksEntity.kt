@@ -8,10 +8,10 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 
 @Entity
-@Table(name = "tasks", schema = "parsonaladmin")
+@Table(name = "tasks", schema = "personal_admin")
 data class JpaTasksEntity(
   @Id @Column(name = "id", updatable = false, nullable = false) @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Int,
   @Column(name = "title") val title: String,
   @Column(name = "description") val description: String,
-  @Column(name="isDone") val isDone: Boolean = false
+  @Column(name="is_done") var isDone: Boolean = false
 )
