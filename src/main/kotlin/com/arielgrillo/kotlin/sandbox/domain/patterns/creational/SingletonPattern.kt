@@ -1,14 +1,14 @@
 package com.arielgrillo.kotlin.sandbox.domain.patterns.creational
 
-class Singleton private constructor() {
+class SingletonPattern private constructor() {
     companion object {
-        private var instance: Singleton? = null
+        private var instance: SingletonPattern? = null
 
-        fun getInstance(): Singleton {
+        fun getInstance(): SingletonPattern {
             if (instance == null) {
                 synchronized(this) {
                     if (instance == null) {
-                        instance = Singleton()
+                        instance = SingletonPattern()
                     }
                 }
             }
