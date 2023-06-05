@@ -1,5 +1,5 @@
-build/
-.idea/
+build
+.idea
 
 # Compiled class file
 *.class
